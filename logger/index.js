@@ -1,10 +1,11 @@
+const path = require("path");
 const log4js = require("log4js");
 
 log4js.configure({
   appenders: {
     multi: {
       type: "multiFile",
-      base: `${pro}/logs`,
+      base: path.join(__dirname, "/logs"),
       property: "categoryName",
       extension: ".log",
       maxLogSize: 30000,
